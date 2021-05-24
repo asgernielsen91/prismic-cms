@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link as RouterLink } from 'react-router-dom';
-import { RichText } from 'prismic-reactjs';
-import { PrismicLink } from '../prismic-elements';
+import React from "react";
+import { Link as RouterLink } from "react-router-dom";
+import { RichText } from "prismic-reactjs";
+import { PrismicLink } from "../prismic-elements";
 
 /**
  * Site header/nav component
@@ -11,15 +11,18 @@ const Header = ({ menuDoc }) => {
     return (
       <header className="site-header">
         <RouterLink to="./">
-          <div className="logo">Example Site</div>
+          <div className="logo">
+            <img
+              className="liverpool-logo"
+              src="https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg"
+              alt=""
+            ></img>
+          </div>
         </RouterLink>
         <nav>
           <ul>
-            {menuDoc.data.menu_links.map(menuLink => (
-              <MenuLink
-                menuLink={menuLink}
-                key={menuLink.link.id}
-              />
+            {menuDoc.data.menu_links.map((menuLink) => (
+              <MenuLink menuLink={menuLink} key={menuLink.link.id} />
             ))}
           </ul>
         </nav>
